@@ -1,10 +1,15 @@
-﻿namespace ConsoleSampleApp
+﻿using Bessa.Console.Dashboard;
+
+namespace ConsoleSampleApp
 {
     class SampleDashboard : ISample
     {
         public void Start()
         {
-            HelperMethods.WaitForKeyCombination();
+            var dashBoard = new ConsoleDashboard();
+            dashBoard.Start();
+
+            HelperMethods.WaitForKeyCombination(false);
         }
     }
 }

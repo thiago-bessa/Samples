@@ -10,7 +10,6 @@ namespace ConsoleSampleApp
     {
         static void Main(string[] args)
         {
-
             var samples = ReflectionHelper.GetAllClassesWithInterface<ISample>().ToDictionary(t => t.Name, t => t);
             var menu = new ConsoleMenu<Type>("Welcome to Console Samples", "Choose an option (ESC to exit):", samples);
             
@@ -25,6 +24,9 @@ namespace ConsoleSampleApp
 
                 selectedOption = menu.WaitForOption();
             }
+
+            Console.Clear();
+            Console.ResetColor();
         }
     }
 }

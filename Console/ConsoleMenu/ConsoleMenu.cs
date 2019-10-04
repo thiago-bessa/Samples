@@ -11,8 +11,7 @@ namespace Bessa.Console.Menu
         private const int HeaderTop = 2;
         private const int MenuLeft = 7;
         private const int MenuTop = 5;
-
-
+        
         private readonly string _header;
         private readonly string _message;
         private readonly Dictionary<string, T> _menuOptions;

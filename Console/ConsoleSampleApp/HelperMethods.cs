@@ -5,10 +5,13 @@ namespace ConsoleSampleApp
 {
     class HelperMethods
     {
-        internal static void WaitForKeyCombination()
+        internal static void WaitForKeyCombination(bool showMessage = true)
         {
-            Console.SetCursorPosition(0, Console.WindowHeight);
-            Console.WriteLine("Press CTRL + F4 to exit sample...");
+            if (showMessage)
+            {
+                Console.SetCursorPosition(0, Console.WindowHeight);
+                Console.WriteLine("Press CTRL + F4 to exit sample...");
+            }
 
             using var waitHandle = new AutoResetEvent(false);
             ThreadPool.QueueUserWorkItem(WaitLoop, waitHandle, true);
